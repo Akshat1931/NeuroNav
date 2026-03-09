@@ -1,0 +1,125 @@
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NeuroNav / HackKnight — Full Stack
+# Start everything:  docker compose up --build
+# Stop everything:   docker compose down
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+
+  # ── MySQL Database ──────────────────────────────────────────────────────────
+  mysql:
+    image: mysql:8
+    container_name: neuronav-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: neuronav123
+      MYSQL_DATABASE: neuronav_db
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pneuronav123"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ── Flask Backend (auth + eye-tracking + sentiment) ─────────────────────────
+  flask-api:
+    build: ./hacknight-2.0/backend
+    container_name: neuronav-flask
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: neuronav123
+      MYSQL_DB: neuronav_db
+      FLASK_PORT: 5000
+      CONVERSATION_LOG_PATH: /app/shared/conversation_log.txt
+    volumes:
+      # Shared volume so Flask can read the chatbot conversation log
+      - conversation_logs:/app/shared
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  # ── NeuroNav Main Frontend (React) ──────────────────────────────────────────
+  main-app:
+    build: ./hacknight-2.0/frontend
+    container_name: neuronav-main
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+      - CHOKIDAR_USEPOLLING=true
+      - WDS_SOCKET_PORT=0
+
+  # ── FaceAuth (Vite + React) ─────────────────────────────────────────────────
+  face-auth:
+    build: ./FaceAuthForDisabled
+    container_name: neuronav-faceauth
+    restart: unless-stopped
+    ports:
+      - "6004:6004"
+
+  # ── Mental Health Chatbot — Express Server ──────────────────────────────────
+  chat-server:
+    build: ./MentalHealthChatBot/server
+    container_name: neuronav-chat-server
+    restart: unless-stopped
+    ports:
+      - "5500:5500"
+    environment:
+      - PORT=5500
+      # Add your Gemini API key here (or put it in .env at repo root)
+      - API_KEY=${GEMINI_API_KEY}
+      - CONVERSATION_LOG_PATH=/app/shared/conversation_log.txt
+    volumes:
+      # Write conversation log to shared volume so Flask can read it
+      - conversation_logs:/app/shared
+
+  # ── Mental Health Chatbot — React Client ────────────────────────────────────
+  chat-client:
+    build: ./MentalHealthChatBot/client
+    container_name: neuronav-chat-client
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3001
+      - CHOKIDAR_USEPOLLING=true
+      - WDS_SOCKET_PORT=0
+    depends_on:
+      - chat-server
+
+  # ── Therapist Video Call (Node + Socket.io) ──────────────────────────────────
+  therapist-call:
+    build: ./TherapistVideoCallforDisabled
+    container_name: neuronav-therapist
+    restart: unless-stopped
+    ports:
+      - "6002:6002"
+
+  # ── Dynamic-Aura 3D World (React + Three.js) ────────────────────────────────
+  dynamic-aura:
+    build: ./Dynamic-Aura
+    container_name: neuronav-aura
+    restart: unless-stopped
+    ports:
+      - "3002:3002"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3002
+      - CHOKIDAR_USEPOLLING=true
+      - WDS_SOCKET_PORT=0
+
+volumes:
+  mysql_data:
+  conversation_logs:

@@ -1,0 +1,161 @@
+.sign-language-container {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 50;
+  }
+  
+  .sign-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #7337d6;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    z-index: 51;
+  }
+  
+  .sign-toggle-btn:hover {
+    background: #5925ac;
+  }
+  
+  .sign-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .sign-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+  }
+  
+  .sign-toggle-detection {
+    background: #7337d6;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+  }
+  
+  .sign-toggle-detection.active {
+    background: #e53e3e;
+  }
+  
+  .sign-toggle-detection:hover {
+    background: #5925ac;
+  }
+  
+  .sign-toggle-detection.active:hover {
+    background: #c53030;
+  }
+  
+  .sign-toggle-detection:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+  }
+  
+  .sign-video-container {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a1a;
+    margin-bottom: 12px;
+  }
+  
+  .sign-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .sign-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sign-canvas.hidden {
+    display: none;
+  }
+  
+  .sign-result {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 12px;
+  }
+  
+  .sign-result-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+  }
+  
+  .sign-result-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #7337d6;
+    margin-bottom: 4px;
+  }
+  
+  .sign-result-description {
+    color: #4a5568;
+    font-size: 0.9rem;
+  }
+  
+  .sign-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+  }
+  
+  .sign-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #7337d6;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .sign-hint {
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: #718096;
+    text-align: center;
+  }

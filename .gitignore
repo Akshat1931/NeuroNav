@@ -1,0 +1,85 @@
+# ─── Node.js ──────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# React build output
+build/
+dist/
+.cache/
+
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+.env/
+*.egg-info/
+dist/
+build/
+*.egg
+.mypy_cache/
+.pytest_cache/
+*.pyc
+
+# ─── Environment variables (NEVER commit secrets) ─────────────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Exception: commit .env.example files as templates
+!.env.example
+
+# ─── MediaPipe model (auto-downloaded on first run, ~5 MB) ───────────────────
+hacknight-2.0/backend/face_landmarker.task
+
+# ─── Conversation logs (personal data) ────────────────────────────────────────
+MentalHealthChatBot/server/conversation_log.txt
+conversation_logs/
+
+# ─── MySQL / Database ─────────────────────────────────────────────────────────
+mysql-data/
+*.sql.bak
+
+# ─── Docker ───────────────────────────────────────────────────────────────────
+# Keep Dockerfiles — ignore data volumes
+mysql-data/
+
+# ─── IDE / Editor ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ─── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ─── Testing ──────────────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─── Misc ─────────────────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
