@@ -16,7 +16,7 @@
 
 ---
 
-## 🧠 What is NeuroNav?
+## What is NeuroNav?
 
 NeuroNav combines **eight distinct accessibility technologies** into a unified, locally-hosted web platform. It was built for people who cannot use traditional mouse/keyboard interfaces due to conditions like ALS, cerebral palsy, stroke, locked-in syndrome, or other motor/communication impairments.
 
@@ -24,14 +24,14 @@ Every feature runs **locally on your machine** — no cloud dependency for core 
 
 ---
 
-## ✨ Features
+## Features
 
-### 👤 Biometric Login (Face Authentication)
+### Biometric Login (Face Authentication)
 - Log in using **facial recognition** — no password required
 - Powered by [face-api.js](https://github.com/justadudewhohacks/face-api.js) running entirely in the browser
 - All face data stays on-device; nothing is transmitted
 
-### 👁️ Eye Tracking Mouse Control
+### Eye Tracking Mouse Control
 - Control the **cursor with your eyes** using any standard webcam
 - **Left eye iris position** → cursor movement (MediaPipe FaceLandmarker landmarks)
 - **Right eye blink** (while left eye is open) → left-click
@@ -39,24 +39,24 @@ Every feature runs **locally on your machine** — no cloud dependency for core 
 - Auto-downloads the MediaPipe face landmark model (~5 MB) on first run
 - Powered by OpenCV + MediaPipe FaceLandmarker Tasks API
 
-### 🎤 Voice Control (Speech-to-Text Navigation)
+### Voice Control (Speech-to-Text Navigation)
 - Hands-free navigation using the **Web Speech API** (built into Chrome/Edge)
 - Say a section name to scroll to it: *"sentiment", "chatbot", "therapist", "EEG", "blog", "games", "virtual"*
 - Live transcript displayed while listening
 
-### 🧠 AI Mental Health Chatbot
+### AI Mental Health Chatbot
 - Empathetic conversational AI that listens, asks follow-up questions, and identifies emotional patterns
 - Suggests personalised coping strategies
 - All conversations logged locally for sentiment analysis
 - Powered by Google Gemini API
 
-### 📊 Sentiment Analysis
+### Sentiment Analysis
 - Automatically analyses your chatbot conversation history
 - Generates weekly charts for **mood, anxiety, depression, and stress** trends
 - No manual input required — reads directly from the conversation log
 - Powered by Flask backend + Recharts visualisation
 
-### 🩺 Disability-Friendly Therapist Video Call
+### Disability-Friendly Therapist Video Call
 - Accessible video calls with therapists via WebRTC
 - Real-time **hand-gesture recognition** using TensorFlow.js:
   - 🖐️ **Open hand** → "Hello"
@@ -64,31 +64,31 @@ Every feature runs **locally on your machine** — no cloud dependency for core 
   - 👎 **Thumb down** → "No"
 - Recognised gestures are converted to **spoken text** via text-to-speech
 
-### 🌍 Dynamic-Aura 3D Virtual World
+### Dynamic-Aura 3D Virtual World
 - A navigable **Three.js 3D environment** with a controllable avatar
 - Walk your character through labelled portals to reach each platform feature
 - Controls: **Arrow keys or WASD**
 - Built as an immersive alternative to traditional menus
 
-### 🧬 EEG Brain Monitoring
+### EEG Brain Monitoring
 - Visualises **live brainwave data** from a USB EEG headset
 - Detects mental states: Relaxed, Focused, Stressed
 - Animated EEG waveform displayed on the dashboard
 
-### 🎮 Neural Games (Cognitive Training)
-- 🚀 **Space Shooter** — reflex and attention training
-- ✈️ **The Aviator** — smooth motor-control practice
-- 🌐 **VR World** — spatial awareness and exploration
+### Neural Games (Cognitive Training)
+- **Space Shooter** — reflex and attention training
+- **The Aviator** — smooth motor-control practice
+- **VR World** — spatial awareness and exploration
 - Playable with mouse, keyboard, eye tracking, or voice
 
-### 📝 Community Blog & Therapy Cards
+###  Community Blog & Therapy Cards
 - Community stories from people with disabilities using assistive tech
 - Evidence-based therapy activity cards:
-  - 🎨 Art Therapy · 🌬️ Breathing · 📓 Journaling · 🧘 Mindfulness · 🎵 Music · 🚶 Movement
+  -  Art Therapy ·  Breathing ·  Journaling ·  Mindfulness ·  Music ·  Movement
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 Main/
@@ -131,7 +131,7 @@ Before setup, install the following:
 
 ---
 
-## 📦 Installation
+##  Installation
 
 ### 1. Clone the repository
 
@@ -213,7 +213,7 @@ cd ..\Dynamic-Aura                && npm install
 
 ---
 
-## 🚀 Running the App
+##  Running the App
 
 From the project root (`Main/`), double-click or run:
 
@@ -223,11 +223,11 @@ From the project root (`Main/`), double-click or run:
 
 This opens **7 separate terminal windows**, one per service. Wait ~30 seconds for all services to start, then open:
 
-**➡️ http://localhost:3000** ← Start here (Login page)
+** http://localhost:3000** ← Start here (Login page)
 
 ---
 
-## 📱 User Flow
+##  User Flow
 
 ```
 http://localhost:3000  (Login Page)
@@ -253,7 +253,7 @@ http://localhost:3000  (Login Page)
 
 ---
 
-## 👁️ Eye Tracking Setup
+##  Eye Tracking Setup
 
 On first use, the eye tracking module will **automatically download** the MediaPipe face landmark model (~5 MB).
 
@@ -268,7 +268,7 @@ On first use, the eye tracking module will **automatically download** the MediaP
 
 ---
 
-## 🔑 Environment Variables Summary
+##  Environment Variables Summary
 
 | File | Variable | Description |
 |------|----------|-------------|
@@ -282,7 +282,7 @@ On first use, the eye tracking module will **automatically download** the MediaP
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Pull requests are welcome. For major changes, please open an issue first.
 
@@ -294,13 +294,13 @@ Pull requests are welcome. For major changes, please open an issue first.
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 - [MediaPipe](https://mediapipe.dev/) — face landmark detection
 - [face-api.js](https://github.com/justadudewhohacks/face-api.js) — browser-based face recognition
@@ -311,5 +311,5 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 ---
 
 <div align="center">
-Built with ❤️ for the disability community
+Built with for the disability community
 </div>
