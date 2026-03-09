@@ -122,7 +122,7 @@ Main/
 
 ---
 
-## 🛠️ Prerequisites
+## Prerequisites
 
 Before setup, install the following:
 
