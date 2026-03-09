@@ -23,6 +23,10 @@ NeuroNav combines **eight distinct accessibility technologies** into a unified, 
 Every feature runs **locally on your machine** — no cloud dependency for core access features. Face authentication never leaves the browser. Eye tracking uses your webcam only. Conversations are stored on your own disk.
 
 ---
+## DEMO
+https://youtu.be/Vb-8Ii7acao?si=TlNhTVfocouSptVw
+
+---
 
 ## Features
 
