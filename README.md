@@ -51,7 +51,7 @@ Every feature runs **locally on your machine** — no cloud dependency for core 
 - Powered by Google Gemini API
 
 ### Sentiment Analysis
-- Automatically analyses your chatbot conversation history
+- Automatically analyses your chatbot conversation history **Used Natural library for**
 - Generates weekly charts for **mood, anxiety, depression, and stress** trends
 - No manual input required — reads directly from the conversation log
 - Powered by Flask backend + Recharts visualisation
