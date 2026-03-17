@@ -41,7 +41,7 @@ https://youtu.be/Vb-8Ii7acao?si=TlNhTVfocouSptVw
 - **Right eye blink** (while left eye is open) → left-click
 - Both eyes closed simultaneously → ignored (natural blink)
 - Auto-downloads the MediaPipe face landmark model (~5 MB) on first run
-- Powered by OpenCV + MediaPipe FaceLandmarker Tasks API
+- Powered by OpenCV + MediaPipe FaceLandmarker Tasks APIs
 
 ### Voice Control (Speech-to-Text Navigation)
 - Hands-free navigation using the **Web Speech API** (built into Chrome/Edge)
